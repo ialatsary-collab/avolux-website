@@ -4,544 +4,734 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AvoLux | From Waste to Worth</title>
-  <meta name="description" content="AvoLux mengubah limbah biji alpukat menjadi produk perawatan sepatu yang lebih berkelanjutan.">
+
+  <title>AvoLux | Waste-Powered Leather Care</title>
+
+  <meta name="description" content="AvoLux menghadirkan perawatan kulit berbasis pemanfaatan limbah alpukat untuk merawat dan mengilapkan produk kulit.">
+
+  <meta name="theme-color" content="#243e2d">
+
+  <link rel="stylesheet" href="css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --green: #526b43;
-      --dark: #243e2d;
-      --cream: #f5f3e9;
-      --sage: #a8b69a;
-      --brown: #a77b52;
-      --white: #fffefa;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--dark);
-      background: var(--white);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 254, 250, 0.96);
-      border-bottom: 1px solid #e9e8df;
-    }
-
-    .nav-inner {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .logo {
-      font-family: "DM Serif Display", serif;
-      font-size: 30px;
-      color: var(--dark);
-      letter-spacing: -1px;
-    }
-
-    .logo span { color: var(--green); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover { color: var(--brown); }
-
-    .nav-cta, .button {
-      display: inline-block;
-      background: var(--green);
-      color: white;
-      padding: 12px 21px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-
-    .nav-cta:hover, .button:hover {
-      background: var(--dark);
-      transform: translateY(-2px);
-    }
-
-    /* HERO */
-    .hero {
-      background: var(--cream);
-      padding: 75px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .eyebrow {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1, h2, h3 {
-      font-family: "DM Serif Display", serif;
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    h1 {
-      font-size: clamp(43px, 5.5vw, 68px);
-      margin-bottom: 22px;
-    }
-
-    h1 span { color: var(--green); }
-
-    .hero-copy {
-      color: #647064;
-      font-size: 16px;
-      max-width: 470px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button-outline {
-      display: inline-block;
-      border: 1px solid var(--green);
-      color: var(--green);
-      padding: 11px 20px;
-      border-radius: 5px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .hero-image {
-      min-height: 430px;
-      border-radius: 8px;
-      background:
-        linear-gradient(180deg, rgba(36,62,45,0.02), rgba(36,62,45,0.15)),
-        url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1100&q=85") center/cover;
-      position: relative;
-    }
-
-    .image-note {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: var(--white);
-      padding: 13px 18px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    /* GENERAL SECTIONS */
-    section { padding: 85px 0; }
-
-    .section-heading {
-      text-align: center;
-      max-width: 620px;
-      margin: 0 auto 45px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(32px, 4vw, 43px);
-      margin-bottom: 14px;
-    }
-
-    .section-heading p {
-      color: #758075;
-      font-size: 14px;
-    }
-
-    /* INTRO */
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .intro-grid h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    .intro-grid p {
-      color: #687568;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .intro-visual {
-      background: var(--cream);
-      padding: 50px 35px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .avocado-icon { font-size: 90px; }
-
-    .intro-visual h3 {
-      font-size: 26px;
-      margin: 10px 0;
-    }
-
-    .intro-visual p { font-size: 13px; color: #758075; }
-
-    /* PRODUCTS */
-    .products { background: var(--cream); }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .product-card {
-      background: var(--white);
-      border-radius: 7px;
-      overflow: hidden;
-    }
-
-    .product-image {
-      height: 220px;
-      background: #e8eadf;
-      display: grid;
-      place-items: center;
-      font-size: 70px;
-    }
-
-    .product-info { padding: 23px; }
-
-    .product-info h3 {
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
-
-    .product-info p {
-      color: #758075;
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .product-link {
-      color: var(--green);
-      font-weight: 700;
-      font-size: 12px;
-    }
-
-    /* PARTNERS */
-    .partner-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .partner-card {
-      background: var(--cream);
-      padding: 35px;
-      border-radius: 7px;
-    }
-
-    .partner-card .symbol {
-      font-size: 35px;
-      margin-bottom: 16px;
-    }
-
-    .partner-card h3 {
-      font-size: 27px;
-      margin-bottom: 12px;
-    }
-
-    .partner-card p {
-      color: #687568;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    /* IMPACT */
-    .impact {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-    }
-
-    .impact .eyebrow { color: var(--sage); }
-
-    .impact h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .impact p {
-      color: #d0d9ce;
-      max-width: 620px;
-      margin: auto;
-      font-size: 14px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--cream);
-      padding: 45px 0 25px;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 35px;
-      flex-wrap: wrap;
-      margin-bottom: 35px;
-    }
-
-    .footer-grid p {
-      color: #758075;
-      font-size: 13px;
-      max-width: 300px;
-      margin-top: 10px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .copyright {
-      border-top: 1px solid #dedfd5;
-      padding-top: 20px;
-      color: #758075;
-      font-size: 11px;
-    }
-
-    @media (max-width: 760px) {
-      .nav-inner { padding: 15px 0; align-items: flex-start; }
-      .nav-links { display: none; }
-      .hero-grid, .intro-grid, .product-grid, .partner-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero { padding: 50px 0; }
-      .hero-image { min-height: 300px; }
-      section { padding: 60px 0; }
-      .intro-grid { gap: 30px; }
-    }
-  </style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="container nav-inner">
-      <a class="logo" href="#home">Avo<span>Lux.</span></a>
+  <!-- NAVIGATION -->
+  <header class="navbar">
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#products">Our Products</a>
-        <a href="#supplier">Become a Supplier</a>
-        <a href="#partnership">Partnership</a>
-      </div>
+    <a href="#beranda" class="nav-logo">
+      <img src="assets/images/avolux-logo.png" alt="Logo AvoLux">
+      <span>AVOLUX</span>
+    </a>
 
-      <a class="nav-cta" href="#contact">Contact Us</a>
-    </div>
-  </nav>
+    <button class="nav-toggle" aria-label="Buka menu navigasi">
+      ☰
+    </button>
 
+    <ul class="nav-links">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#supplier">Supplier</a></li>
+      <li><a href="#kemitraan">Kemitraan</a></li>
+      <li><a href="#dampak">Dampak Kami</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+
+  </header>
+
+
+  <!-- HERO SECTION -->
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Sustainable Shoe Care</div>
-          <h1>Give Waste a <span>Second Life.</span></h1>
-          <p class="hero-copy">
-            Turning avocado seed waste into a new way to care for your shoes.
-            Discover a more thoughtful approach to shoe care with AvoLux.
-          </p>
-          <div class="hero-buttons">
-            <a class="button" href="#products">Explore Products</a>
-            <a class="button-outline" href="#partnership">Become a Partner</a>
-          </div>
+
+    <section class="hero" id="beranda">
+
+      <div class="hero-content">
+
+        <div class="hero-label">
+          WASTE-POWERED LEATHER CARE
         </div>
 
-        <div class="hero-image">
-          <div class="image-note">From Waste to Worth.</div>
-        </div>
-      </div>
-    </section>
+        <h1>
+          Rawat Kulit,<br>
+          <span>Hargai Alam.</span>
+        </h1>
 
-    <section id="about">
-      <div class="container intro-grid">
-        <div>
-          <div class="eyebrow">Our Purpose</div>
-          <h2>A New Perspective on Shoe Care.</h2>
-          <p>
-            Every day, avocado seeds are discarded as waste by food and
-            beverage businesses. AvoLux sees an opportunity to give this
-            overlooked resource a second life.
-          </p>
-          <p>
-            We transform avocado seed waste into innovative shoe-care
-            products while building connections between waste suppliers,
-            business partners, and conscious consumers.
-          </p>
-          <a class="product-link" href="#impact">Discover Our Impact →</a>
-        </div>
-
-        <div class="intro-visual">
-          <div class="avocado-icon">🥑</div>
-          <h3>Waste to Worth</h3>
-          <p>Collect. Transform. Care.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="products" id="products">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">The AvoLux Collection</div>
-          <h2>Care for Every Step.</h2>
-          <p>
-            Explore our developing range of shoe-care solutions made with
-            a circular-economy mindset.
-          </p>
-        </div>
-
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="product-image">👟</div>
-            <div class="product-info">
-              <h3>Shoe Care Polish</h3>
-              <p>A shoe-care concept developed from recovered avocado seed resources.</p>
-              <a class="product-link" href="#contact">Inquire About Product →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">🧴</div>
-            <div class="product-info">
-              <h3>Shoe Care Oil</h3>
-              <p>An innovative care solution inspired by the potential of avocado seed oil.</p>
-              <a class="product-link" href="#contact">Inquire About Product →</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">🌿</div>
-            <div class="product-info">
-              <h3>Future Collection</h3>
-              <p>More sustainable shoe-care innovations are part of our journey.</p>
-              <a class="product-link" href="#contact">Stay Connected →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="supplier">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow">Join Our Circular Network</div>
-          <h2>Be Part of the Change.</h2>
-          <p>
-            AvoLux connects different businesses to create value from
-            resources that would otherwise be discarded.
-          </p>
-        </div>
-
-        <div class="partner-grid">
-          <article class="partner-card">
-            <div class="symbol">🥑</div>
-            <h3>Become a Supplier</h3>
-            <p>
-              Own a juice bar, café, or restaurant? Partner with AvoLux
-              to turn your avocado seed waste into a valuable resource.
-            </p>
-            <a class="button" href="#contact">Join as Supplier</a>
-          </article>
-
-          <article class="partner-card" id="partnership">
-            <div class="symbol">👞</div>
-            <h3>Business Partnership</h3>
-            <p>
-              Run a shoe laundry or retail business? Work with AvoLux
-              and introduce our shoe-care products to your customers.
-            </p>
-            <a class="button" href="#contact">Explore Partnership</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="impact" id="impact">
-      <div class="container">
-        <div class="eyebrow">Our Impact</div>
-        <h2>Small Seeds. Meaningful Change.</h2>
         <p>
-          We believe that a better future starts by rethinking waste.
-          Together with our suppliers, partners, and customers,
-          AvoLux aims to build a more circular shoe-care ecosystem.
+          Menghadirkan inovasi perawatan dan pengilap produk kulit
+          melalui pemanfaatan limbah alpukat. Perawatan kulit yang
+          menghubungkan kualitas produk dengan kepedulian terhadap lingkungan.
         </p>
+
+        <div class="hero-buttons">
+          <a href="#produk" class="btn btn-primary">
+            Jelajahi Produk
+          </a>
+
+          <a href="#kemitraan" class="btn btn-outline">
+            Jadi Mitra Kami
+          </a>
+        </div>
+
+        <div style="margin-top:35px;color:#d1d8d0;font-size:13px;">
+          FROM WASTE TO WORTH.
+        </div>
+
       </div>
+
+      <div class="hero-image">
+        <img
+          src="assets/images/avolux-logo.png"
+          alt="AvoLux - Waste-Powered Leather Care"
+        >
+      </div>
+
     </section>
+
+
+    <!-- BRAND INTRODUCTION -->
+    <section class="section" id="tentang">
+
+      <div class="intro-grid">
+
+        <div class="intro-content">
+
+          <div class="hero-label">TENTANG AVOLUX</div>
+
+          <h2>
+            Inovasi dari Limbah,
+            untuk Perawatan Kulit.
+          </h2>
+
+          <p>
+            AvoLux merupakan inovasi produk perawatan kulit yang
+            mengembangkan pemanfaatan limbah alpukat sebagai bahan
+            baku bernilai tambah.
+          </p>
+
+          <p>
+            Melalui pengembangan ekstrak lipid dari limbah alpukat,
+            AvoLux berupaya menghadirkan alternatif bahan perawatan
+            untuk membantu menjaga kondisi dan kilap produk kulit.
+          </p>
+
+          <p>
+            Kami mengusung pendekatan ekonomi sirkular dengan
+            mengubah potensi limbah menjadi produk yang memiliki
+            nilai guna.
+          </p>
+
+          <a href="#dampak" class="btn btn-primary">
+            Kenali Misi Kami
+          </a>
+
+        </div>
+
+        <div class="intro-image">
+          <img
+            src="assets/images/avolux-logo.png"
+            alt="Identitas merek AvoLux"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCT SECTION -->
+    <section class="section" id="produk"
+      style="background:#eee8d9;">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">PRODUK KAMI</div>
+
+        <h2>Perawatan Kulit dalam Satu Produk</h2>
+
+        <p>
+          Dikembangkan untuk membantu merawat dan memberikan kilap
+          pada produk kulit dengan pendekatan pemanfaatan limbah.
+        </p>
+
+      </div>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+
+          <img
+            src="assets/images/avolux-logo.png"
+            alt="AvoLux Leather Care"
+          >
+
+          <div class="product-info">
+
+            <h3>AvoLux Leather Care</h3>
+
+            <p>
+              Krim perawatan berbasis lipid hasil pemanfaatan
+              limbah alpukat yang dikembangkan untuk produk kulit
+              dengan permukaan halus dan berlapis.
+            </p>
+
+            <a
+              href="#kontak"
+              class="btn btn-primary"
+            >
+              Informasi Produk
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div style="height:250px;display:flex;align-items:center;justify-content:center;background:#e9e1cf;color:#243e2d;font-family:Georgia,serif;font-size:25px;">
+            CARE & CONDITIONING
+          </div>
+
+          <div class="product-info">
+
+            <h3>Leather Conditioning</h3>
+
+            <p>
+              Dikembangkan untuk membantu menjaga kondisi
+              permukaan produk kulit sebagai bagian dari
+              perawatan rutin.
+            </p>
+
+            <a
+              href="#kontak"
+              class="btn btn-primary"
+            >
+              Pelajari Lebih Lanjut
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div style="height:250px;display:flex;align-items:center;justify-content:center;background:#e9e1cf;color:#243e2d;font-family:Georgia,serif;font-size:25px;">
+            NATURAL GLOSS
+          </div>
+
+          <div class="product-info">
+
+            <h3>Leather Shine</h3>
+
+            <p>
+              Formulasi yang dikembangkan untuk membantu
+              menghasilkan tampilan permukaan kulit yang
+              lebih terawat dan berkilau.
+            </p>
+
+            <a
+              href="#kontak"
+              class="btn btn-primary"
+            >
+              Pelajari Lebih Lanjut
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <p style="text-align:center;margin-top:30px;color:#77796f;font-size:13px;">
+        Produk masih dalam tahap pengembangan dan validasi.
+        Kesesuaian penggunaan mengikuti jenis serta kondisi kulit.
+      </p>
+
+    </section>
+
+
+    <!-- VALUE PROPOSITION -->
+    <section class="section value-section">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">NILAI AVOLUX</div>
+
+        <h2 style="color:white;">
+          Lebih dari Sekadar Perawatan Kulit
+        </h2>
+
+        <p style="color:#d7dfd5;">
+          Menggabungkan inovasi bahan, perawatan produk,
+          dan pemanfaatan sumber daya secara lebih bertanggung jawab.
+        </p>
+
+      </div>
+
+      <div class="value-grid">
+
+        <div class="value-card">
+
+          <div class="value-icon">♻</div>
+
+          <h3>Waste Utilization</h3>
+
+          <p>
+            Memanfaatkan potensi limbah alpukat sebagai
+            sumber bahan baku bernilai tambah.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="value-icon">✦</div>
+
+          <h3>Leather Care</h3>
+
+          <p>
+            Mengembangkan produk untuk membantu merawat
+            dan memberikan kilap pada produk kulit.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="value-icon">🌱</div>
+
+          <h3>Circular Economy</h3>
+
+          <p>
+            Mendorong pendekatan ekonomi sirkular melalui
+            pemanfaatan kembali sumber daya yang berpotensi terbuang.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SUPPLIER SECTION -->
+    <section class="section" id="supplier">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">BERGABUNG BERSAMA KAMI</div>
+
+        <h2>Menjadi Supplier AvoLux</h2>
+
+        <p>
+          Kami membuka peluang kerja sama dengan pelaku usaha
+          yang memiliki sumber limbah alpukat, seperti toko jus,
+          kafe, dan usaha makanan atau minuman.
+        </p>
+
+      </div>
+
+      <div class="form-container">
+
+        <form
+          name="supplier-avolux"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+
+          <input type="hidden" name="form-name" value="supplier-avolux">
+
+          <p hidden>
+            <label>Jangan isi ini:
+              <input name="bot-field">
+            </label>
+          </p>
+
+          <div class="form-group">
+            <label>Nama Usaha</label>
+            <input
+              type="text"
+              name="nama-usaha"
+              placeholder="Nama usaha atau bisnis"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Nama Kontak</label>
+            <input
+              type="text"
+              name="nama-kontak"
+              placeholder="Nama penanggung jawab"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Nomor WhatsApp</label>
+            <input
+              type="tel"
+              name="nomor-whatsapp"
+              placeholder="Contoh: 628xxxxxxxxxx"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Jenis Usaha</label>
+            <select name="jenis-usaha" required>
+              <option value="">Pilih jenis usaha</option>
+              <option>Toko jus atau minuman</option>
+              <option>Kafe atau restoran</option>
+              <option>Penjual alpukat</option>
+              <option>Usaha makanan dan minuman lainnya</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Perkiraan Limbah Alpukat per Minggu</label>
+            <input
+              type="text"
+              name="volume-limbah"
+              placeholder="Contoh: 5 kg per minggu"
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Alamat Usaha</label>
+            <textarea
+              name="alamat-usaha"
+              placeholder="Masukkan alamat usaha"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Kirim Pendaftaran Supplier
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- PARTNERSHIP SECTION -->
+    <section
+      class="section"
+      id="kemitraan"
+      style="background:#eee8d9;"
+    >
+
+      <div class="section-heading">
+
+        <div class="eyebrow">BUSINESS PARTNERSHIP</div>
+
+        <h2>Mari Berkembang Bersama AvoLux</h2>
+
+        <p>
+          Kami membuka peluang kolaborasi dengan berbagai pelaku
+          usaha untuk memperluas pemanfaatan produk perawatan kulit.
+        </p>
+
+      </div>
+
+      <div class="form-container">
+
+        <form
+          name="partnership-avolux"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+
+          <input type="hidden" name="form-name" value="partnership-avolux">
+
+          <p hidden>
+            <label>Jangan isi ini:
+              <input name="bot-field">
+            </label>
+          </p>
+
+          <div class="form-group">
+            <label>Nama Bisnis</label>
+            <input
+              type="text"
+              name="nama-bisnis"
+              placeholder="Nama bisnis atau perusahaan"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Nama Kontak</label>
+            <input
+              type="text"
+              name="nama-kontak"
+              placeholder="Nama penanggung jawab"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Nomor WhatsApp</label>
+            <input
+              type="tel"
+              name="nomor-whatsapp"
+              placeholder="Nomor WhatsApp aktif"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label>Jenis Bisnis</label>
+            <select name="jenis-bisnis" required>
+              <option value="">Pilih jenis bisnis</option>
+              <option>Jasa perawatan sepatu dan tas</option>
+              <option>Retail atau toko produk kulit</option>
+              <option>Reseller atau distributor</option>
+              <option>Komunitas atau organisasi</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Jenis Kerja Sama yang Diminati</label>
+            <select name="jenis-kerja-sama" required>
+              <option value="">Pilih kerja sama</option>
+              <option>Reseller</option>
+              <option>Retail partnership</option>
+              <option>Jasa perawatan kulit</option>
+              <option>Kolaborasi bisnis</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Kota atau Lokasi Bisnis</label>
+            <input
+              type="text"
+              name="lokasi"
+              placeholder="Contoh: Tangerang Selatan"
+            >
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Ajukan Kemitraan
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPACT SECTION -->
+    <section class="section" id="dampak">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">OUR IMPACT</div>
+
+        <h2>Mengubah Potensi Limbah Menjadi Nilai</h2>
+
+        <p>
+          AvoLux mengembangkan pendekatan ekonomi sirkular
+          dengan memperhatikan pemanfaatan bahan baku,
+          efisiensi proses, dan kemasan produk.
+        </p>
+
+      </div>
+
+      <div class="value-grid">
+
+        <div class="value-card">
+          <div class="value-icon">♻</div>
+          <h3>Pemanfaatan Limbah</h3>
+          <p>
+            Mengembangkan pemanfaatan limbah alpukat
+            sebagai bahan baku produk.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">⚗</div>
+          <h3>Inovasi Ekstraksi</h3>
+          <p>
+            Mengeksplorasi proses ekstraksi untuk
+            memperoleh fraksi lipid dari limbah alpukat.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🌿</div>
+          <h3>Pengembangan Berkelanjutan</h3>
+          <p>
+            Memperhatikan penggunaan energi, hasil ekstraksi,
+            dan material kemasan dalam pengembangan produk.
+          </p>
+        </div>
+
+      </div>
+
+      <p style="text-align:center;margin-top:25px;color:#77796f;font-size:13px;">
+        Indikator dampak lingkungan akan dievaluasi berdasarkan
+        data pengembangan dan pengukuran aktual.
+      </p>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section
+      class="section"
+      id="kontak"
+      style="background:#eee8d9;"
+    >
+
+      <div class="section-heading">
+
+        <div class="eyebrow">HUBUNGI KAMI</div>
+
+        <h2>Mari Terhubung dengan AvoLux</h2>
+
+        <p>
+          Tertarik dengan produk, ingin menjadi supplier,
+          atau ingin menjalin kemitraan? Hubungi tim AvoLux.
+        </p>
+
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-item">
+          <h3>Alamat</h3>
+          <p>
+            Edu Town Kavling Edu I No. 1,
+            Jalan BSD Raya Barat 1, Serpong,
+            Pagedangan, Kec. Pagedangan,
+            Kabupaten Tangerang, Banten 15339.
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>WhatsApp</h3>
+          <p>
+            +62 882-2005-792256
+          </p>
+          <a
+            href="https://wa.me/628822005792256"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            style="margin-top:15px;"
+          >
+            Hubungi AvoLux
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+
+      <h2>From Waste to Worth.</h2>
+
+      <p>
+        Bersama AvoLux, kita mulai langkah baru dalam
+        pemanfaatan limbah untuk perawatan produk kulit.
+      </p>
+
+      <a
+        href="https://wa.me/628822005792256?text=Halo%20AvoLux%2C%20saya%20tertarik%20dengan%20produk%20Anda."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Hubungi Kami
+      </a>
+
+    </section>
+
   </main>
 
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a class="logo" href="#home">Avo<span>Lux.</span></a>
-          <p>From Waste to Worth. A more thoughtful approach to shoe care.</p>
-        </div>
 
-        <div class="footer-links">
-          <a href="#about">About Us</a>
-          <a href="#products">Products</a>
-          <a href="#supplier">Suppliers</a>
-          <a href="#partnership">Partnership</a>
-          <a href="mailto:hello@avolux.com">Email Us</a>
-        </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>AVOLUX</h3>
+        <p>
+          Waste-Powered Leather Care.
+          Mengembangkan inovasi perawatan kulit
+          melalui pemanfaatan limbah alpukat.
+        </p>
       </div>
 
-      <div class="copyright">
-        © 2026 AvoLux. All rights reserved.
+      <div>
+        <h4>Navigasi</h4>
+        <ul class="footer-links">
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="#dampak">Dampak Kami</a></li>
+        </ul>
       </div>
+
+      <div>
+        <h4>Hubungi Kami</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="https://wa.me/628822005792256" target="_blank" rel="noopener noreferrer">
+              WhatsApp AvoLux
+            </a>
+          </li>
+          <li><a href="#supplier">Menjadi Supplier</a></li>
+          <li><a href="#kemitraan">Kemitraan Bisnis</a></li>
+        </ul>
+      </div>
+
     </div>
+
+    <div class="footer-bottom">
+      © <span id="current-year">2026</span> AvoLux.
+      All Rights Reserved.
+    </div>
+
   </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    href="https://wa.me/628822005792256?text=Halo%20AvoLux%2C%20saya%20ingin%20bertanya%20mengenai%20produk%20Anda."
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Hubungi AvoLux melalui WhatsApp"
+  >
+    WhatsApp
+  </a>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
 
 </body>
 </html>
