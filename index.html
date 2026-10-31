@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AvoLux | From Waste to Worth</title>
+  <meta name="description" content="AvoLux mengubah limbah biji alpukat menjadi produk perawatan sepatu yang lebih berkelanjutan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #526b43;
+      --dark: #243e2d;
+      --cream: #f5f3e9;
+      --sage: #a8b69a;
+      --brown: #a77b52;
+      --white: #fffefa;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 254, 250, 0.96);
+      border-bottom: 1px solid #e9e8df;
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "DM Serif Display", serif;
+      font-size: 30px;
+      color: var(--dark);
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    .nav-cta, .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 12px 21px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .nav-cta:hover, .button:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--cream);
+      padding: 75px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: "DM Serif Display", serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(43px, 5.5vw, 68px);
+      margin-bottom: 22px;
+    }
+
+    h1 span { color: var(--green); }
+
+    .hero-copy {
+      color: #647064;
+      font-size: 16px;
+      max-width: 470px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button-outline {
+      display: inline-block;
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 11px 20px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-image {
+      min-height: 430px;
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(36,62,45,0.02), rgba(36,62,45,0.15)),
+        url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1100&q=85") center/cover;
+      position: relative;
+    }
+
+    .image-note {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: var(--white);
+      padding: 13px 18px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* GENERAL SECTIONS */
+    section { padding: 85px 0; }
+
+    .section-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 43px);
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: #758075;
+      font-size: 14px;
+    }
+
+    /* INTRO */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .intro-grid h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .intro-grid p {
+      color: #687568;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .intro-visual {
+      background: var(--cream);
+      padding: 50px 35px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .avocado-icon { font-size: 90px; }
+
+    .intro-visual h3 {
+      font-size: 26px;
+      margin: 10px 0;
+    }
+
+    .intro-visual p { font-size: 13px; color: #758075; }
+
+    /* PRODUCTS */
+    .products { background: var(--cream); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .product-image {
+      height: 220px;
+      background: #e8eadf;
+      display: grid;
+      place-items: center;
+      font-size: 70px;
+    }
+
+    .product-info { padding: 23px; }
+
+    .product-info h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: #758075;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .product-link {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    /* PARTNERS */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .partner-card {
+      background: var(--cream);
+      padding: 35px;
+      border-radius: 7px;
+    }
+
+    .partner-card .symbol {
+      font-size: 35px;
+      margin-bottom: 16px;
+    }
+
+    .partner-card h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .partner-card p {
+      color: #687568;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    /* IMPACT */
+    .impact {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .impact .eyebrow { color: var(--sage); }
+
+    .impact h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .impact p {
+      color: #d0d9ce;
+      max-width: 620px;
+      margin: auto;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--cream);
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .footer-grid p {
+      color: #758075;
+      font-size: 13px;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .copyright {
+      border-top: 1px solid #dedfd5;
+      padding-top: 20px;
+      color: #758075;
+      font-size: 11px;
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner { padding: 15px 0; align-items: flex-start; }
+      .nav-links { display: none; }
+      .hero-grid, .intro-grid, .product-grid, .partner-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 50px 0; }
+      .hero-image { min-height: 300px; }
+      section { padding: 60px 0; }
+      .intro-grid { gap: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Avo<span>Lux.</span></a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#products">Our Products</a>
+        <a href="#supplier">Become a Supplier</a>
+        <a href="#partnership">Partnership</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Sustainable Shoe Care</div>
+          <h1>Give Waste a <span>Second Life.</span></h1>
+          <p class="hero-copy">
+            Turning avocado seed waste into a new way to care for your shoes.
+            Discover a more thoughtful approach to shoe care with AvoLux.
+          </p>
+          <div class="hero-buttons">
+            <a class="button" href="#products">Explore Products</a>
+            <a class="button-outline" href="#partnership">Become a Partner</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="image-note">From Waste to Worth.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container intro-grid">
+        <div>
+          <div class="eyebrow">Our Purpose</div>
+          <h2>A New Perspective on Shoe Care.</h2>
+          <p>
+            Every day, avocado seeds are discarded as waste by food and
+            beverage businesses. AvoLux sees an opportunity to give this
+            overlooked resource a second life.
+          </p>
+          <p>
+            We transform avocado seed waste into innovative shoe-care
+            products while building connections between waste suppliers,
+            business partners, and conscious consumers.
+          </p>
+          <a class="product-link" href="#impact">Discover Our Impact →</a>
+        </div>
+
+        <div class="intro-visual">
+          <div class="avocado-icon">🥑</div>
+          <h3>Waste to Worth</h3>
+          <p>Collect. Transform. Care.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">The AvoLux Collection</div>
+          <h2>Care for Every Step.</h2>
+          <p>
+            Explore our developing range of shoe-care solutions made with
+            a circular-economy mindset.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">👟</div>
+            <div class="product-info">
+              <h3>Shoe Care Polish</h3>
+              <p>A shoe-care concept developed from recovered avocado seed resources.</p>
+              <a class="product-link" href="#contact">Inquire About Product →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🧴</div>
+            <div class="product-info">
+              <h3>Shoe Care Oil</h3>
+              <p>An innovative care solution inspired by the potential of avocado seed oil.</p>
+              <a class="product-link" href="#contact">Inquire About Product →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🌿</div>
+            <div class="product-info">
+              <h3>Future Collection</h3>
+              <p>More sustainable shoe-care innovations are part of our journey.</p>
+              <a class="product-link" href="#contact">Stay Connected →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="supplier">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Join Our Circular Network</div>
+          <h2>Be Part of the Change.</h2>
+          <p>
+            AvoLux connects different businesses to create value from
+            resources that would otherwise be discarded.
+          </p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <div class="symbol">🥑</div>
+            <h3>Become a Supplier</h3>
+            <p>
+              Own a juice bar, café, or restaurant? Partner with AvoLux
+              to turn your avocado seed waste into a valuable resource.
+            </p>
+            <a class="button" href="#contact">Join as Supplier</a>
+          </article>
+
+          <article class="partner-card" id="partnership">
+            <div class="symbol">👞</div>
+            <h3>Business Partnership</h3>
+            <p>
+              Run a shoe laundry or retail business? Work with AvoLux
+              and introduce our shoe-care products to your customers.
+            </p>
+            <a class="button" href="#contact">Explore Partnership</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact" id="impact">
+      <div class="container">
+        <div class="eyebrow">Our Impact</div>
+        <h2>Small Seeds. Meaningful Change.</h2>
+        <p>
+          We believe that a better future starts by rethinking waste.
+          Together with our suppliers, partners, and customers,
+          AvoLux aims to build a more circular shoe-care ecosystem.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="#home">Avo<span>Lux.</span></a>
+          <p>From Waste to Worth. A more thoughtful approach to shoe care.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#products">Products</a>
+          <a href="#supplier">Suppliers</a>
+          <a href="#partnership">Partnership</a>
+          <a href="mailto:hello@avolux.com">Email Us</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 AvoLux. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
