@@ -3,14 +3,25 @@
    AVOLUX - WEBSITE INTERACTIONS
    ================================= */
 
-// WhatsApp AvoLux
+// =================================
+// GOOGLE APPS SCRIPT CONNECTION
+// =================================
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbyyG8ZiDkWKbmvTg3PMV1V0Ad8gOZaewD5ycBLLvtBL_XjiPf7cCw5hUCC46vZAbS9c/exec";
+
+
+// =================================
+// WHATSAPP NUMBER
+// =================================
+
 const WHATSAPP_NUMBER = "628822005792256";
 
-// Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbx2Ir5y3oeRHbbnfVVCjU2-4lFtzB5A18BnkSy3WJ9rNnFiAR3wYbebyB1oaFu65N16/exec";
 
-// Mobile navigation
+// =================================
+// MOBILE NAVIGATION
+// =================================
+
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
 
@@ -26,7 +37,11 @@ if (navToggle && navLinks) {
   });
 }
 
-// WhatsApp buttons
+
+// =================================
+// WHATSAPP ORDER BUTTONS
+// =================================
+
 document.querySelectorAll(".whatsapp-link").forEach(function (button) {
   button.addEventListener("click", function (event) {
     event.preventDefault();
@@ -45,13 +60,25 @@ document.querySelectorAll(".whatsapp-link").forEach(function (button) {
   });
 });
 
-// Send Supplier and Partnership forms to Google Sheets
+
+// =================================
+// SEND FORM TO GOOGLE SHEETS
+// =================================
+
 async function sendToGoogleSheets(form, formType) {
   const submitButton = form.querySelector('button[type="submit"]');
+
+  if (!submitButton) {
+    alert("Tombol kirim tidak ditemukan.");
+    return;
+  }
+
   const originalText = submitButton.textContent;
 
   const formData = new URLSearchParams(new FormData(form));
-  formData.append("formType", formType);
+
+  // Menentukan tab Google Sheets tujuan
+  formData.set("formType", formType);
 
   submitButton.disabled = true;
   submitButton.textContent = "Mengirim...";
@@ -64,13 +91,17 @@ async function sendToGoogleSheets(form, formType) {
     });
 
     alert(
-      "Formulir telah dikirim. Silakan tunggu konfirmasi dari tim AvoLux."
+      "Permintaan pengiriman telah dilakukan. Silakan hubungi tim AvoLux jika belum mendapat konfirmasi."
     );
 
     form.reset();
 
   } catch (error) {
-    alert("Pengiriman gagal. Silakan coba kembali.");
+    console.error("Pengiriman formulir gagal:", error);
+
+    alert(
+      "Terjadi kesalahan saat mengirim formulir. Silakan coba kembali."
+    );
 
   } finally {
     submitButton.disabled = false;
@@ -78,7 +109,11 @@ async function sendToGoogleSheets(form, formType) {
   }
 }
 
-// Supplier form
+
+// =================================
+// SUPPLIER FORM
+// =================================
+
 const supplierForm = document.querySelector(
   'form[name="supplier-avolux"]'
 );
@@ -86,11 +121,16 @@ const supplierForm = document.querySelector(
 if (supplierForm) {
   supplierForm.addEventListener("submit", function (event) {
     event.preventDefault();
+
     sendToGoogleSheets(supplierForm, "Supplier");
   });
 }
 
-// Partnership form
+
+// =================================
+// PARTNERSHIP FORM
+// =================================
+
 const partnershipForm = document.querySelector(
   'form[name="partnership-avolux"]'
 );
@@ -98,11 +138,16 @@ const partnershipForm = document.querySelector(
 if (partnershipForm) {
   partnershipForm.addEventListener("submit", function (event) {
     event.preventDefault();
+
     sendToGoogleSheets(partnershipForm, "Partnership");
   });
 }
 
-// Automatic footer year
+
+// =================================
+// AUTOMATIC FOOTER YEAR
+// =================================
+
 const yearElement = document.querySelector("#current-year");
 
 if (yearElement) {
