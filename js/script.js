@@ -8,7 +8,7 @@
 // =================================
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyyG8ZiDkWKbmvTg3PMV1V0Ad8gOZaewD5ycBLLvtBL_XjiPf7cCw5hUCC46vZAbS9c/exec";
+  "https://script.google.com/macros/s/AKfycbyyG8ZiDkWKbmvTg3PMV1V0Ad8gOZaewD5ycBLLvtBL_XjiPf7cVw5hUCC46vZAbS9c/exec";
 
 
 // =================================
